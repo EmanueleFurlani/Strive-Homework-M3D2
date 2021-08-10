@@ -257,6 +257,7 @@
                           <div>
                             <h2 id="sectionCenter">Eminem</h2>
                             <h3 id="sectionCenter2">Somethings add here</h3>
+                            <button class="btn" onclick="albumCount()" style="color: aliceblue;">click me</button> <!-- new add-->
                           </div>
                           <h4 class="see-all">SEE ALL</h4>
                         </div>
@@ -398,12 +399,17 @@
                 .then(musics => {
                   console.log(musics)
                   displayMusic(musics)
+                  countAlbum = musics.data.length
                 })
                 .catch(err => {
                     console.error(err)
                 })
 
             console.log("printing a message")
+        }
+
+        function albumCount() {
+          alert (`Count number: ${countAlbum}`)
         }
         function displayMusic(musics) {
             const row = document.getElementById("firstTry")
